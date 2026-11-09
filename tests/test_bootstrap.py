@@ -210,7 +210,7 @@ class BootstrapDownloadTests(unittest.TestCase):
             self.assertEqual(p.returncode, 1)
             self.assertIn("Загрузка прервана, ничего не установлено", p.stderr)
             self.assertNotIn("установленные файлы не изменены", p.stderr)
-            self.assertIn("Проверьте токен", p.stderr)
+            self.assertIn("Проверьте подключение к GitHub", p.stderr)
             self.assertFalse((self.inst / "install.sh").exists())
             self.assertEqual(self._parts(), [])
 
